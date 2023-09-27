@@ -59,7 +59,6 @@ Get the list of available currencies.
     >>> fxrio.get_symbols()
     '''
      {
-       u'success': True,
        u'symbols':
        {
          u'AED': u'United Arab Emirates Dirham',
@@ -67,7 +66,8 @@ Get the list of available currencies.
          u'ALL': u'Albanian Lek',
          ...
          u'ZWL': u'Zimbabwean Dollar'
-       }
+       },
+       u'success': True
      }
     '''
 
@@ -95,6 +95,34 @@ Get historical rates for any day since 1999.
        u'date': u'2023-09-26'
      }
     '''
+
+Get the latest EUR and GBP rates with a USD base with a basic subscription.
+
+.. code:: python
+
+    >>> import fixerio
+    >>> from datetime import date, timedelta
+
+    >>> yesterday = date.today() - timedelta(days=1)
+    >>> fxrio = fixerio.BasicClient(access_key='YOUR BASIC ACCESS KEY')
+    >>> fxrio.get_latest(symbols=["EUR", "GBP"], base="USD")
+
+Get the a timeseries of CHN with a USD base for the first half of 2023 with a professional subscription.
+
+.. code:: python
+
+    >>> import fixerio
+    >>> fxrio = fixerio.ProfessionalClient(access_key='YOUR PROFESSIONAL ACCESS KEY')
+    >>> fxrio.get_time_series("2023-01-01", "2023-06-01", symbols=["CNY"], base="USD")
+
+
+Get the price fluctuation of all currencies with a USD base for the first half of 2023 with a professional plus subscription.
+
+.. code:: python
+
+    >>> import fixerio
+    >>> fxrio = fixerio.ProfessionalPlusClient(access_key='YOUR PROFESSIONAL PLUS ACCESS KEY')
+    >>> fxrio.get_fluctuation("2023-01-01", "2023-06-01", base="USD")
 
 
 Useful Links
