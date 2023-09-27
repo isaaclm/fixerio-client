@@ -1,7 +1,7 @@
-A Python client for `Fixer.io`_
+A Python client for `fixer.io`
 ===============================
 
-`Fixer.io`_ is a simple and lightweight JSON API for current and historical foreign
+`fixer.io` is a simple and lightweight JSON API for current and historical foreign
 exchange (forex) rates. Fixer.io:
 
 This library contains clients for each tier of the fixer.io subscriptions, from
