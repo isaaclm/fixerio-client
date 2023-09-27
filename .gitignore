@@ -1,0 +1,19 @@
+### Python
+*.pyc
+
+### Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Sphinx documentation
+docs/_build/
+
+### Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+
+### PyCharm
+.idea
+main.py
