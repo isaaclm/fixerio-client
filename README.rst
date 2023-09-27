@@ -27,16 +27,21 @@ by specifying the symbols as in this example.
     >>> fxrio = fixerio.FreeClient(access_key='YOUR FREE ACCESS KEY')
     >>> fxrio.get_latest(symbols=["USD", "CNY", "CAD", "JPY", "GBP", "CHF"])
     '''
-     {u'rates': {u'USD': 1.050282,
-      u'CNY': 7.678637,
-      u'CAD': 1.419047,
-      u'JPY': 157.141116,
-      u'GBP': 0.866294,
-      u'CHF': 0.966654},
-     u'success': True,
-     u'timestamp': 1695832924,
-     u'base': u'EUR',
-     u'date': u'2023-09-27'}
+     {
+       u'rates':
+       {
+         u'USD': 1.050282,
+         u'CNY': 7.678637,
+         u'CAD': 1.419047,
+         u'JPY': 157.141116,
+         u'GBP': 0.866294,
+         u'CHF': 0.966654
+       },
+       u'success': True,
+       u'timestamp': 1695832924,
+       u'base': u'EUR',
+       u'date': u'2023-09-27'
+     }
     '''
 
 If you don't specify the symbols you will request all rates for your
@@ -53,12 +58,17 @@ Get the list of available currencies.
     >>> fxrio = fixerio.FreeClient(access_key='YOUR FREE ACCESS KEY')
     >>> fxrio.get_symbols()
     '''
-     {u'success': True,
-     u'symbols': {u'AED': u'United Arab Emirates Dirham',
-      u'AFN': u'Afghan Afghani',
-      u'ALL': u'Albanian Lek',
-      ...
-      u'ZWL': u'Zimbabwean Dollar'}}
+     {
+       u'success': True,
+       u'symbols':
+       {
+         u'AED': u'United Arab Emirates Dirham',
+         u'AFN': u'Afghan Afghani',
+         u'ALL': u'Albanian Lek',
+         ...
+         u'ZWL': u'Zimbabwean Dollar'
+       }
+     }
     '''
 
 Get historical rates for any day since 1999.
@@ -72,13 +82,18 @@ Get historical rates for any day since 1999.
     >>> fxrio = fixerio.FreeClient(access_key='YOUR FREE ACCESS KEY')
     >>> fxrio.historical_rates(yesterday)
     '''
-     {u'rates': {u'USD': 1.05692,
-      u'GBP': 0.870168},
-     u'success': True,
-     u'timestamp': 1695772799,
-     u'historical': True,
-     u'base': u'EUR',
-     u'date': u'2023-09-26'}
+     {
+       u'rates':
+       {
+         u'USD': 1.05692,
+         u'GBP': 0.870168
+       },
+       u'success': True,
+       u'timestamp': 1695772799,
+       u'historical': True,
+       u'base': u'EUR',
+       u'date': u'2023-09-26'
+     }
     '''
 
 
