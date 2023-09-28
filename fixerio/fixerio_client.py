@@ -2,9 +2,7 @@ import datetime
 import requests
 from urllib.parse import urljoin
 from .exceptions import FixerioException
-
-BASE_HTTP_URL = 'http://data.fixer.io/api'
-BASE_HTTPS_URL = 'https://data.fixer.io/api'
+from .url import BASE_HTTP_URL
 
 
 class FixerioClient(object):
@@ -152,6 +150,10 @@ class FixerioClient(object):
         :raises FixerioException: if any error making a request.
         """
         try:
+            if isinstance(date, datetime.date):
+                # Convert date to ISO 8601 format.
+                date = date.isoformat()
+
             payload = self._create_payload(from_ccy=from_ccy, to_ccy=to_ccy, amount=amount, date=date)
 
             url = urljoin(self.base_url, "convert")

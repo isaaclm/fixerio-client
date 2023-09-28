@@ -1,5 +1,5 @@
 from .basic_client import BasicClient
-from .fixerio_client import BASE_HTTPS_URL
+from .url import BASE_HTTPS_URL
 
 
 class ProfessionalClient(BasicClient):

@@ -1,5 +1,5 @@
 from .fixerio_client import FixerioClient
-from .fixerio_client import BASE_HTTP_URL
+from .url import BASE_HTTP_URL
 
 class FreeClient(FixerioClient):
     """ A client for the Fixer.io Free Plan. """
