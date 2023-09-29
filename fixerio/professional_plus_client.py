@@ -1,8 +1,8 @@
-from .basic_client import BasicClient
+from .professional_client import ProfessionalClient
 from .url import BASE_HTTPS_URL
 
 
-class ProfessionalPlusClient(BasicClient):
+class ProfessionalPlusClient(ProfessionalClient):
     """ A client for the Fixer.io Professional Plus Plan. """
 
     def __init__(self, access_key, symbols=None, base=None):
