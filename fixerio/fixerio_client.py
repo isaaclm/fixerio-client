@@ -62,7 +62,6 @@ class FixerioClient(object):
             payload = self._create_payload()
 
             url = f"{self.base_url}/symbols"
-            print(url)
 
             response = requests.get(url, params=payload)
 
@@ -90,7 +89,6 @@ class FixerioClient(object):
             payload = self._create_payload(symbols=symbols, base=base)
 
             url = f"{self.base_url}/latest"
-            print(url)
 
             response = requests.get(url, params=payload)
 
@@ -126,7 +124,6 @@ class FixerioClient(object):
             payload = self._create_payload(symbols=symbols, base=base)
 
             url = f"{self.base_url}/{date}"
-            print(url)
 
             response = requests.get(url, params=payload)
 
@@ -157,10 +154,8 @@ class FixerioClient(object):
                 date = date.isoformat()
 
             payload = self._create_payload(from_ccy=from_ccy, to_ccy=to_ccy, amount=amount, date=date)
-            print(payload)
 
             url = f"{self.base_url}/convert"
-            print(url)
 
             response = requests.get(url, params=payload)
 
