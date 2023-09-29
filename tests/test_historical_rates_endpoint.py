@@ -9,12 +9,10 @@ class FixerioHistoricalRatesTestCase(unittest.TestCase):
 
     def setUp(self):
         self.access_key = 'your-access-key'
-        self.base_url = "http://test.url"
         self.date_as_str = "2006-12-24"
         self.date_as_date = datetime.strptime(self.date_as_str, "%Y-%m-%d").date()
         self.client = FixerioClient(self.access_key)
-        self.client.base_url = self.base_url
-        self.expected_url = f"{self.base_url}/{self.date_as_str}"
+        self.expected_url = f"http://data.fixer.io/api/{self.date_as_str}"
 
     @patch('requests.get')
     def test_historical_rates_url_with_date(self, mock_requests_get):

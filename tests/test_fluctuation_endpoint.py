@@ -9,14 +9,12 @@ class FixerioFluctuationTestCase(unittest.TestCase):
 
     def setUp(self):
         self.access_key = 'your-access-key'
-        self.base_url = "http://test.url"
         self.start_date_as_str = "2006-12-24"
         self.start_date_as_date = datetime.strptime(self.start_date_as_str, "%Y-%m-%d").date()
         self.end_date_as_str = "2006-12-24"
         self.end_date_as_date = datetime.strptime(self.start_date_as_str, "%Y-%m-%d").date()
         self.client = FixerioClient(self.access_key)
-        self.client.base_url = self.base_url
-        self.expected_url = f"{self.base_url}/fluctuation"
+        self.expected_url = "http://data.fixer.io/api/fluctuation"
 
     @patch('requests.get')
     def test_url_with_dates(self, mock_requests_get):

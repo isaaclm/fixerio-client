@@ -9,12 +9,10 @@ class FixerioConvertTestCase(unittest.TestCase):
 
     def setUp(self):
         self.access_key = 'your-access-key'
-        self.base_url = "http://test.url"
         self.date_as_str = "2006-12-24"
         self.date_as_date = datetime.strptime(self.date_as_str, "%Y-%m-%d").date()
         self.client = FixerioClient(self.access_key)
-        self.client.base_url = self.base_url
-        self.expected_url = f"{self.base_url}/convert"
+        self.expected_url = "http://data.fixer.io/api/convert"
 
     @patch('requests.get')
     def test_url(self, mock_requests_get):

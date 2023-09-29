@@ -8,10 +8,8 @@ class FixerioSymbolsTestCase(unittest.TestCase):
 
     def setUp(self):
         self.access_key = 'your-access-key'
-        self.base_url = "http://test.url"
         self.client = FixerioClient(self.access_key)
-        self.client.base_url = self.base_url
-        self.expected_url = f"{self.base_url}/symbols"
+        self.expected_url = "http://data.fixer.io/api/symbols"
 
     @patch('requests.get')
     def test_url(self, mock_requests_get):
