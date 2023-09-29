@@ -72,7 +72,7 @@ class ProfessionalClient(BasicClient):
         :rtype: dict
         :raises FixerioException: if any error making a request.
         """
-        self._convert(from_ccy, to_ccy, amount, date=date)
+        return self._convert(from_ccy, to_ccy, amount, date=date)
 
     def get_time_series(self, start_date, end_date, symbols=None, base=None):
         """ Gets daily historical rates between two dates of your choice, with a maximum time frame of 365 days.

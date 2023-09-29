@@ -1,6 +1,5 @@
 import datetime
 import requests
-from urllib.parse import urljoin
 from .exceptions import FixerioException
 from .url import BASE_HTTP_URL
 
@@ -62,7 +61,8 @@ class FixerioClient(object):
         try:
             payload = self._create_payload()
 
-            url = urljoin(self.base_url, "symbols")
+            url = f"{self.base_url}/symbols"
+            print(url)
 
             response = requests.get(url, params=payload)
 
@@ -89,7 +89,8 @@ class FixerioClient(object):
 
             payload = self._create_payload(symbols=symbols, base=base)
 
-            url = urljoin(self.base_url, "latest")
+            url = f"{self.base_url}/latest"
+            print(url)
 
             response = requests.get(url, params=payload)
 
@@ -124,7 +125,8 @@ class FixerioClient(object):
             symbols = symbols or self.symbols
             payload = self._create_payload(symbols=symbols, base=base)
 
-            url = urljoin(self.base_url, date)
+            url = f"{self.base_url}/{date}"
+            print(url)
 
             response = requests.get(url, params=payload)
 
@@ -155,8 +157,10 @@ class FixerioClient(object):
                 date = date.isoformat()
 
             payload = self._create_payload(from_ccy=from_ccy, to_ccy=to_ccy, amount=amount, date=date)
+            print(payload)
 
-            url = urljoin(self.base_url, "convert")
+            url = f"{self.base_url}/convert"
+            print(url)
 
             response = requests.get(url, params=payload)
 
@@ -195,7 +199,7 @@ class FixerioClient(object):
 
             payload = self._create_payload(start_date=start_date, end_date=end_date, symbols=symbols, base=base)
 
-            url = urljoin(self.base_url, "timeseries")
+            url = f"{self.base_url}/timeseries"
 
             response = requests.get(url, params=payload)
 
@@ -234,7 +238,7 @@ class FixerioClient(object):
 
             payload = self._create_payload(start_date=start_date, end_date=end_date, symbols=symbols, base=base)
 
-            url = urljoin(self.base_url, "fluctuation")
+            url = f"{self.base_url}/fluctuation"
 
             response = requests.get(url, params=payload)
 

@@ -71,4 +71,4 @@ class BasicClient(FreeClient):
         :rtype: dict
         :raises FixerioException: if any error making a request.
         """
-        self._convert(from_ccy, to_ccy, amount, date=date)
+        return self._convert(from_ccy, to_ccy, amount, date=date)
